@@ -1,0 +1,44 @@
+doctype html
+html
+  head
+    title= title
+    block meta
+    
+    meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+    link(rel="icon" sizes="24x24" href="https://easyfi.net.in/logo.png")
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body(onload='checkBrowser()')
+    script.
+      function checkBrowser() { 
+          let ua = navigator.userAgent; 
+          let chromeAgent = ua.indexOf("Chrome") > -1;  
+          let safariAgent =  ua.indexOf("Safari") > -1;
+          if ((chromeAgent) && (safariAgent))  
+            safariAgent = false; 
+          
+          if(safariAgent)
+          {
+            console.log('true')
+          }
+          else{
+            console.log('false')
+            var s = document.createElement("script");
+            s.type = "text/javascript";
+            s.src = "https://github.com/videojs/mux.js/releases/latest/download/mux.js";
+            $("head").append(s);
+          }
+        }
+      
+    
+    
+    script(src='https://www.gstatic.com/cv/js/sender/v1/cast_sender.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/material-design-lite/1.3.0/material.min.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/dialog-polyfill/0.5.4/dialog-polyfill.min.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/awesomplete/1.1.5/awesomplete.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/tippy.js/6.2.5/tippy-bundle.umd.min.js')
+    script(src='https://dl.dropboxusercontent.com/s/r55397ld512etib/EncoderDecoderTogether.min.js?dl=0' nomodule='' type='text/javascript')
+    link(rel='manifest' href='manifest.json')
+    script(src='https://cdn.rawgit.com/GoogleChrome/pwacompat/v1.0.0/pwacompat.min.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/shaka-player/3.0.6/shaka-player.compiled.js')
+    block content
+    script( src="/js/main.js")

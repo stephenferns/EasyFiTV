@@ -1,0 +1,26 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
+#video4 {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* width: 100%;
+  height: 90%; */
+  width: 100%;
+  height: auto;
+}
+#video5 {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* width: 100%;
+  height: 90%; */
+  width: 100%;
+  height: auto;
+}
