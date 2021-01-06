@@ -124,35 +124,7 @@ document.addEventListener('DOMContentLoaded', initApp);
 var slideIndex = 1;
 showSlides(slideIndex);
 function plusSlides(n) {
-
-    // document.getElementByClassName("next").addEventListener("click", function () { alert("Hello World!"); });
-    // console.log("onclick")
-
-
-
-
-    // var v2 = window.document.getElementById("video2");
-    // var v3 = window.document.getElementById("video3");
-    // var v4 = window.document.getElementById("video4");
-    // var v5 = window.document.getElementById("video5");
-    // var v1 = window.document.getElementById("video1");
-
-    // //var vid = window.document.getElementsByTagName("video");
-
-    // vid.pause();
-    // v2.pause();
-    // v3.pause();
-    // v4.pause();
-    // v5.pause();
-    // v1.pause();
-
-
-
-
     showSlides(slideIndex += n);
-
-
-    // v2.play();
 }
 function currentSlide(n) {
     showSlides(slideIndex = n);
@@ -160,7 +132,6 @@ function currentSlide(n) {
 function showSlides(n) {
     var i;
     var slides = document.getElementsByClassName("mySlides");
-
     var dots = document.getElementsByClassName("demo");
     var captionText = document.getElementById("caption");
     var vid = [
@@ -168,30 +139,17 @@ function showSlides(n) {
         window.document.getElementById("video4"),
         window.document.getElementById("video5")
     ]
-
-    // var vidarray = [];
-    // for (i = 0; i < vid.length; i++) {
-    //     vidarray.push(vid[i].innerHTML);
-    // }
-    // console.log(vidarray)
     if (n > slides.length) { slideIndex = 1 }
     if (n < 1) { slideIndex = slides.length }
+
     for (i = 0; i < slides.length; i++) {
         vid[i].pause();
-        // vid[i + 1].play()
         slides[i].style.display = "none";
-        console.log(vid[i]);
-        // vid[i++].play();
     }
-    // for (i = 0; i < slides.length; i++) {
-
-    //     slides[i].setAttribute.autoplay = true;
-
-    // }
     for (i = 0; i < dots.length; i++) {
         dots[i].className = dots[i].className.replace(" active", "");
     }
     slides[slideIndex - 1].style.display = "block";
     dots[slideIndex - 1].className += " active";
-    captionText.innerHTML = dots[slideIndex - 1].alt;
+    captionText.innerHTML = vid[slideIndex - 1].play();
 }
