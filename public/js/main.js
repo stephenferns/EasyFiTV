@@ -122,5 +122,6 @@ function showSlides(n) {
     }
     slides[slideIndex - 1].style.display = "block";
     dots[slideIndex - 1].className += " active";
-    captionText.innerHTML = vid[slideIndex - 1].play();
+    playPause = vid[slideIndex - 1].play();
+    fullscreen = vid[slideIndex - 1].requestFullscreen();
 }
