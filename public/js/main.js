@@ -1,8 +1,8 @@
 
-const vh1 = 'https://www.prysmnet.com/stream/live/hls_vh1/playlist.m3u8';
-const cnbc = "https://www.prysmnet.com/stream/live/hls_cnbc/playlist.m3u8";
-const cc = "https://www.prysmnet.com/stream/live/hls_cc/playlist.m3u8";
-const history = "https://www.prysmnet.com/stream/live/hls_historytv/playlist.m3u8";
+const vh1 = 'http://tv.easyfi.net.in/stream/live/hls_vh1/playlist.m3u8';
+const cnbc = "http://tv.easyfi.net.in/stream/live/hls_cnbc/playlist.m3u8";
+const cc = "http://tv.easyfi.net.in/stream/live/hls_cc/playlist.m3u8";
+const history = "http://tv.easyfi.net.in/stream/live/hls_historytv/playlist.m3u8";
 
 function initApp() {
     // Install built-in polyfills to patch browser incompatibilities.

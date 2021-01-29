@@ -6,6 +6,8 @@ router.get("/", function (req, res, next) {
   let ua = navigator.userAgent;
   let chromeAgent = ua.indexOf("Chrome") > -1;
   let safariAgent = ua.indexOf("Safari") > -1;
+  if ((chromeAgent) && (safariAgent))
+    safariAgent = false;
 
   if (safariAgent) {
     res.render('safari', { title: 'EasyFi TV' });
