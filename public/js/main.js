@@ -123,5 +123,5 @@ function showSlides(n) {
     slides[slideIndex - 1].style.display = "block";
     dots[slideIndex - 1].className += " active";
     playPause = vid[slideIndex - 1].play();
-    fullscreen = vid[slideIndex - 1].requestFullscreen();
+    // fullscreen = vid[slideIndex - 1].requestFullscreen();
 }
