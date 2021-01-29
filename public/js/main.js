@@ -105,8 +105,10 @@ function showSlides(n) {
     var captionText = document.getElementById("caption");
     var vid = [
 
-        window.document.getElementById("video4"),
-        window.document.getElementById("video5")
+        window.document.getElementById("vh1"),
+        window.document.getElementById("cnbc"),
+        window.document.getElementById("cc"),
+        window.document.getElementById("history"),
     ]
     if (n > slides.length) { slideIndex = 1 }
     if (n < 1) { slideIndex = slides.length }
