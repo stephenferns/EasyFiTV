@@ -7,29 +7,8 @@ html
     meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
     link(rel="icon" sizes="24x24" href="https://easyfi.net.in/logo.png")
     link(rel='stylesheet', href='/stylesheets/style.css')
-  body(onload='checkBrowser()')
-    script.
-      function checkBrowser() { 
-          let ua = navigator.userAgent; 
-          let chromeAgent = ua.indexOf("Chrome") > -1;  
-          let safariAgent =  ua.indexOf("Safari") > -1;
-          if ((chromeAgent) && (safariAgent))  
-            safariAgent = false; 
-          
-          if(safariAgent)
-          {
-            console.log('true')
-          }
-          else{
-            console.log('false')
-            var s = document.createElement("script");
-            s.type = "text/javascript";
-            s.src = "https://github.com/videojs/mux.js/releases/latest/download/mux.js";
-            $("head").append(s);
-          }
-        }
-      
-    
+  body
+        
     
     script(src='https://www.gstatic.com/cv/js/sender/v1/cast_sender.js')
     script(src='https://cdnjs.cloudflare.com/ajax/libs/material-design-lite/1.3.0/material.min.js')
