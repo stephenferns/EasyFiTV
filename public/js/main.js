@@ -1,12 +1,8 @@
-const manifestUriHistory = "https://www.prysmnet.com/stream/live/HistoryTV18HD/master.m3u8";
-const manifestUricolors = "https://www.prysmnet.com/stream/live/ColorsInfinityHD/master.m3u8";
 
-
-// const manifestUri = 'https://www.prysmnet.com/stream/live/Demofeed/master.m3u8';
-// "https://storage.googleapis.com/shaka-asset-icons/dark_truth.webp";
-
-// const manifestUridemo =
-//     'http://103.69.226.253:8080/live/Demo/master.m3u8';
+const vh1 = 'https://www.prysmnet.com/stream/live/hls_vh1/playlist.m3u8';
+const cnbc = "https://www.prysmnet.com/stream/live/hls_cnbc/playlist.m3u8";
+const cc = "https://www.prysmnet.com/stream/live/hls_cc/playlist.m3u8";
+const history = "https://www.prysmnet.com/stream/live/hls_historytv/playlist.m3u8";
 
 function initApp() {
     // Install built-in polyfills to patch browser incompatibilities.
@@ -24,74 +20,31 @@ function initApp() {
 
 async function initPlayer() {
     // // Create a Player instance.
-    // const video = document.getElementById('video1');
-    // const videoVH1 = document.getElementById('videoVH1');
-    // const videoMTV = document.getElementById('video2');
-    // const videoMTVbeats = document.getElementById('video3');
-    const videoHistory = document.getElementById('video4');
-    const videoColors = document.getElementById('video5');
+    const videoVh1 = document.getElementById('vh1');
+    const videoCnbc = document.getElementById('cnbc');
+    const videoCc = document.getElementById('cc');
+    const videoHistory = document.getElementById('history');
 
-
-    // const player = new shaka.Player(video);
-    // const playerVH1 = new shaka.Player(videoVH1);
-    // const playerMTV = new shaka.Player(videoMTV);
-    // const playerMTVbeats = new shaka.Player(videoMTVbeats);
+    const playerVh1 = new shaka.Player(videoVh1);
+    const playerCnbc = new shaka.Player(videoCnbc);
+    const playerCc = new shaka.Player(videoCc);
     const playerHistory = new shaka.Player(videoHistory);
-    const playerColors = new shaka.Player(videoColors);
+
 
     // Attach player to the window to make it easy to access in the JS console.
-    // window.player = player;
-    // window.player = playerVH1;
-    // window.player = playerMTV;
-    // window.player = playerMTVbeats;
+    window.player = playerCnbc;
+    window.player = playerVh1;
     window.player = playerHistory;
-    window.player = playerColors;
+    window.player = playerCc;
 
     // Listen for error events.
-    // player.addEventListener('error', onErrorEvent);
-    // playerVH1.addEventListener('error', onErrorEvent);
-    // playerMTV.addEventListener('error', onErrorEvent);
-    // playerMTVbeats.addEventListener('error', onErrorEvent);
+    playerVh1.addEventListener('error', onErrorEvent);
+    playerCnbc.addEventListener('error', onErrorEvent);
     playerHistory.addEventListener('error', onErrorEvent);
-    playerColors.addEventListener('error', onErrorEvent);
+    playerCc.addEventListener('error', onErrorEvent);
 
-    // Try to load a manifest.
-    // This is an asynchronous process.
-    // try {
-    //     await player.load(manifestUri);
-    //     // This runs if the asynchronous load is successful.
-    //     console.log('The video has now been loaded!');
-    // } catch (e) {
-    //     // onError is executed if the asynchronous load fails.
-    //     onError(e);
-    // }
-    // try {
-    //     await playerVH1.load(manifestUri);
-    //     // This runs if the asynchronous load is successful.
-    //     console.log('The video has now been loaded!');
-    // } catch (e) {
-    //     // onError is executed if the asynchronous load fails.
-    //     onError(e);
-    // }
-    // // playerdemo.addEventListener('error', onErrorEvent);
-    // try {
-    //     await playerMTV.load(manifestUriMTV);
-    //     // This runs if the asynchronous load is successful.
-    //     console.log('The video has now been loaded!');
-    // } catch (e) {
-    //     // onError is executed if the asynchronous load fails.
-    //     onError(e);
-    // }
-    // try {
-    //     await playerMTVbeats.load(manifestUriMTVbeats);
-    //     // This runs if the asynchronous load is successful.
-    //     console.log('The video has now been loaded!');
-    // } catch (e) {
-    //     // onError is executed if the asynchronous load fails.
-    //     onError(e);
-    // }
     try {
-        await playerHistory.load(manifestUriHistory);
+        await playerVh1.load(vh1);
         // This runs if the asynchronous load is successful.
         console.log('The video has now been loaded!');
     } catch (e) {
@@ -99,7 +52,23 @@ async function initPlayer() {
         onError(e);
     }
     try {
-        await playerColors.load(manifestUricolors);
+        await playerCnbc.load(cnbc);
+        // This runs if the asynchronous load is successful.
+        console.log('The video has now been loaded!');
+    } catch (e) {
+        // onError is executed if the asynchronous load fails.
+        onError(e);
+    }
+    try {
+        await playerCc.load(cc);
+        // This runs if the asynchronous load is successful.
+        console.log('The video has now been loaded!');
+    } catch (e) {
+        // onError is executed if the asynchronous load fails.
+        onError(e);
+    }
+    try {
+        await playerHistory.load(history);
         // This runs if the asynchronous load is successful.
         console.log('The video has now been loaded!');
     } catch (e) {

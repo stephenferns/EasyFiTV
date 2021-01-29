@@ -84,14 +84,22 @@ block content
   script(src="https://github.com/videojs/mux.js/releases/latest/download/mux.js")
   .container-carousle
     .mySlides
-      video#video4(autoplay='true' controls)
+      video#vh1(autoplay='true' controls)
     .mySlides
-      video#video5(controls)      
+      video#cnbc(controls)
+    .mySlides
+      video#cc(controls)
+    .mySlides
+      video#history(controls)      
     a.prev(onclick='plusSlides(-1)') &#x276E;
     a.next(onclick='plusSlides(1)') &#x276F;
     .row(style='display:none')
       .column
-        img.demo.cursor(src='/images/logo.gif' style='width:100%' onclick='currentSlide(4)' alt='Northern Lights')
+        img.demo.cursor(src='/images/logo.gif' style='width:100%' onclick='currentSlide(1)' alt='VH1')
       .column
-        img.demo.cursor(src='/images/logo.gif' style='width:100%' onclick='currentSlide(5)' alt='Nature and sunrise')
+        img.demo.cursor(src='/images/logo.gif' style='width:100%' onclick='currentSlide(2)' alt='CNBC')
+      .column
+        img.demo.cursor(src='/images/logo.gif' style='width:100%' onclick='currentSlide(3)' alt='CC')
+      .column
+        img.demo.cursor(src='/images/logo.gif' style='width:100%' onclick='currentSlide(4)' alt='History')
   
