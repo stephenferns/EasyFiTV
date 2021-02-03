@@ -1,4 +1,8 @@
-
+document.addEventListener("keydown", e => {
+    //by pressing "Q" letter on your keyboard, the bulgarian keyboard will print "," (a comma), but you will get information about the physical key being pressed 
+    console.log("code of key : " + e.code); // prints "KeyQ"
+    console.log("value of key : " + e.key);
+});
 const vh1 = 'https://tv.easyfi.net.in/stream/live/hls_vh1/playlist.m3u8';
 const cnbc = "https://tv.easyfi.net.in/stream/live/hls_cnbc/playlist.m3u8";
 const cc = "https://tv.easyfi.net.in/stream/live/hls_cc/playlist.m3u8";
